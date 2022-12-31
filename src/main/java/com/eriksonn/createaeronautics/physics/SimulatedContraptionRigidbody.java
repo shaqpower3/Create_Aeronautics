@@ -782,16 +782,6 @@ public class SimulatedContraptionRigidbody extends AbstractContraptionRigidbody 
     {
         return localVelocity.add(pos.cross(angularVelocity));
     }
-    public void applyImpulse(Vector3d pos, Vector3d impulse) {
-        momentum = momentum.add(impulse);
-        globalVelocity = momentum.scale(1.0 / getMass());
-
-        // if(Math.abs(impulse.scale(1.0 / getMass()).lengthSqr()) < 0.05) return;
-
-        Vector3d additionalAngularMomentum = rotateInverse(impulse).cross(pos);
-        angularMomentum = angularMomentum.add(additionalAngularMomentum);
-        updateRotation();
-    }
     Vector3d getForcePropellerBearing(BlockPos pos,PropellerBearingTileEntity te)
     {
         if(!te.isRunning())
