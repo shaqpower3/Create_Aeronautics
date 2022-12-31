@@ -87,8 +87,8 @@ public class SubcontraptionRigidbody extends AbstractContraptionRigidbody {
 
 
     public void applyImpulse(Vector3d pos, Vector3d velocity) {
-        parentRigidbody.applyImpulse(toParent(pos),entity.reverseRotation(velocity,0));
-
+        parentRigidbody.applyImpulse(toParent(pos), entity.reverseRotation(velocity, 0));
+    }
 
     public void applyGlobalImpulse(Vector3d pos, Vector3d velocity) {
         parentRigidbody.applyGlobalImpulse(toParent(pos),velocity);
